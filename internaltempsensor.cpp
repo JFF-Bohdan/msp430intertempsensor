@@ -2,7 +2,7 @@
 
 InternalTempSensor::InternalTempSensor()
 {    
-m_Average(0);
+
 }
 
 InternalTempSensor::~InternalTempSensor()

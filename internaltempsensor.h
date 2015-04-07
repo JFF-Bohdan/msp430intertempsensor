@@ -38,12 +38,9 @@
 class InternalTempSensor
 {
 public:
-    InternalTempSensor(const boolean initialize = true);
+    InternalTempSensor();
 
     ~InternalTempSensor();
-    
-    //! initializes sensor
-    static void init();    
     
     /*!
      * \brief update updates measurements (average value) and returns last value
@@ -65,5 +62,7 @@ public:
 private:
     int32_t     m_Average;    
 };
+
+extern InternalTempSensor MSPTemp;
 
 #endif //INTERNALTEMPSENSOR_H

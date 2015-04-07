@@ -1,10 +1,8 @@
 #include "internaltempsensor.h"
 
-InternalTempSensor::InternalTempSensor(const boolean initialize):
-    m_Average(0)
+InternalTempSensor::InternalTempSensor()
 {    
-    if(initialize)
-        init();
+
 }
 
 InternalTempSensor::~InternalTempSensor()
@@ -12,17 +10,13 @@ InternalTempSensor::~InternalTempSensor()
     //
 }
 
-void InternalTempSensor::init()
+int32_t InternalTempSensor::update(const boolean onlyIntegerPart, const int measurementsQty)
 {
     analogReference(INTERNAL1V5);
-    pinMode(TEMPSENSOR, INPUT);
 
     //first measuring contains wrong data
     analogRead(TEMPSENSOR);
-}
-
-int32_t InternalTempSensor::update(const boolean onlyIntegerPart, const int measurementsQty)
-{
+    
     int i = 0;
 
     m_Average = 0;
@@ -49,3 +43,4 @@ float InternalTempSensor::temperatureFloat() const
     return (float)((m_Average/10)) + (m_Average%10)/10.0;
 }
 
+InternalTempSensor MSPTemp;

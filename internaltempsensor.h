@@ -63,4 +63,6 @@ private:
     int32_t     m_Average;    
 };
 
+extern InternalTempSensor MSPTemp;
+
 #endif //INTERNALTEMPSENSOR_H

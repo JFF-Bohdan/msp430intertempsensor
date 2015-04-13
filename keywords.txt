@@ -1,0 +1,4 @@
+update	KEYWORD2
+temperature	KEYWORD2
+temperatureFloat	KEYWORD2
+    
